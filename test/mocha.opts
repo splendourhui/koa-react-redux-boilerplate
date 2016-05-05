@@ -1,0 +1,7 @@
+--ui bdd
+--reporter spec
+--recursive
+--timeout 10000
+
+--grep IGNORE
+--invert
