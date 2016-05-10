@@ -2,7 +2,7 @@
  * @Author: SplendourHui
  * @Date:   2016-05-05 20:12
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-05 20:17
+* @Last modified time: 2016-05-10 15:38
  */
 
 
@@ -69,7 +69,8 @@ const clientConfig = merge({}, commonConfig, {
     admin: './_client_src/index.jsx'
   },
   output: {
-    path: path.join(__dirname, 'public/js'),
+    path: path.join(__dirname, 'public'),
+    publicPath: '/assets/',
     filename: '[name].bundle.js'
   },
   plugins: [

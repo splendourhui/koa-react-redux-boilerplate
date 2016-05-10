@@ -25,6 +25,7 @@
     "superagent": "^1.4.0"
   },
   "scripts": {
+    "dev": "node --harmony `which webpack-dev-server` --port 9528",
     "build": "node --harmony `which webpack`",
     "dist": "node --harmony `which webpack` -p",
     "start": "supervisor --harmony --ignore public app.js",

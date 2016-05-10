@@ -2,21 +2,32 @@
 @Author: SplendourHui
 @Date:   2016-04-29 09:54
 @Last modified by:   SplendourHui
-@Last modified time: 2016-05-05 20:18
+@Last modified time: 2016-05-10 15:36
 -->
 
 
 
-## cvte-exam-admin
+## koa-react-redux-boilerplate
 
-> 网测系统管理端
+> koa + react + redux 项目样板
 
 
 ### 用法
 
+#### 依赖
+- 全局安装 `webpack` 命令行
+- 全局安装 `webpack-dev-server` 命令行
 
-#### 运行
+#### 开发环境
 ```
+npm start
+npm run dev
+```
+需要开启两个 `cmd` 窗口，支持组件热更新
+
+#### 生产环境
+```
+npm run dist
 npm start
 ```
 
@@ -44,7 +55,7 @@ npm test
   ```
 
 - public
-  - css js 等静态文件
+  - assets 等静态文件
 
 - routes: 路由、controller
 
