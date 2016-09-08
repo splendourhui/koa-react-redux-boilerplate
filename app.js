@@ -1,11 +1,9 @@
 /**
- * @Author: SplendourHui
- * @Date:   2016-04-29 09:54
+* @Author: SplendourHui
+* @Date:   2016-05-09 15:32
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-05 20:19
- */
-
-
+* @Last modified time: 2016-09-08 17:31
+*/
 
 'use strict';
 
@@ -77,7 +75,7 @@ easyLogger.easyLogger();
  *   throw new errorHelper.JsonError('no permission', 401);
  * 则错误就被下面捕捉到，在这里执行自己想要的操作即可
  */
-app.use(function* (next) {
+app.use(function*(next) {
   try {
     yield next;
   } catch (e) {

@@ -1,11 +1,9 @@
 /**
-* @Author: SplendourHui
-* @Date:   2016-05-05 20:06
-* @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-05 20:20
+* @Author: SamChan
+* @Date:   2016-05-05T15:02:42+08:00
+* @Last modified by:   SamChan
+* @Last modified time: 2016-08-30T15:53:15+08:00
 */
-
-
 
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
@@ -15,7 +13,9 @@ import * as commonActions from '../../actions/common';
 import * as messageActions from '../../actions/common_message';
 import * as dialogActions from '../../actions/common_dialog';
 
-class FeedbackDetailPage extends Component {
+import tools from '../../utils/tools';
+
+class ExamplePage extends Component {
   constructor(props) {
     super(props);
   }
@@ -29,7 +29,15 @@ class FeedbackDetailPage extends Component {
   }
 }
 
-FeedbackDetailPage.propTypes = {};
+ExamplePage.propTypes = {};
+
+const states = [];
+
+const actions = {
+  commonActions,
+  messageActions,
+  dialogActions
+};
 
 function mapStateToProps(state) {
   return {query: state.router.location.query};
@@ -43,4 +51,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FeedbackDetailPage);
+export default tools.connect(states, actions, ExamplePage);

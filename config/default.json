@@ -1,3 +1,6 @@
 {
-  "defaultPort": 3333
+  "defaultPort": 9527,
+  "serverConfig": {
+    "url": ""
+  }
 }

@@ -1,12 +1,10 @@
 /**
- * @Author: SamChan
- * @Date:   2016-05-05T11:34:38+08:00
+* @Author: SplendourHui
+* @Date:   2016-05-09 15:32
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-05 20:19
- */
-
-
+* @Last modified time: 2016-09-08 17:32
+*/
 
 module.exports = {
 
-};
+}

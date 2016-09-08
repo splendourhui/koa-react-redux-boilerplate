@@ -1,11 +1,9 @@
 /**
- * @Author: SplendourHui
- * @Date:   2016-05-05 20:06
+* @Author: SplendourHui
+* @Date:   2016-08-26 15:08
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-05 20:20
- */
-
-
+* @Last modified time: 2016-09-08 10:25
+*/
 
 /* 有状态遍历，从左到右
  * accumulator是累加器，存储状态
@@ -21,12 +19,18 @@ const foldr = f => accumulator => ([x, ...xs]) =>
   x === undefined ? accumulator : f(x)(foldr(f)(accumulator)(xs));
 
 
+/* 自实现循环函数
+ */
 const loopOnArray = f => foldl(_ => x => f(x))(undefined);
 exports.loopOnArray = loopOnArray;
 
+/* 自实现 map 函数
+ */
 const map = f => foldr(x => acc => [f(x), ...acc])([]);
 exports.map = map;
 
+/* 自实现累加函数
+ */
 const sum = foldr(x => acc => x + acc)(0);
 exports.sum = sum;
 

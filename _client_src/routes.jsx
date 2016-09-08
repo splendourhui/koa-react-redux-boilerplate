@@ -1,11 +1,9 @@
 /**
-* @Author: SplendourHui
-* @Date:   2016-05-05 20:06
-* @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-05 20:19
+* @Author: SamChan
+* @Date:   2016-05-05T11:23:17+08:00
+* @Last modified by:   SamChan
+* @Last modified time: 2016-05-05T15:05:25+08:00
 */
-
-
 
 import React from 'react';
 import {Route, Redirect} from 'react-router';

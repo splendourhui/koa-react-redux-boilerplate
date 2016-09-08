@@ -1,21 +1,13 @@
 /**
- * @Author: SplendourHui
- * @Date:   2016-05-05 20:06
+* @Author: SplendourHui
+* @Date:   2016-09-08 10:00
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-05 20:20
- */
+* @Last modified time: 2016-09-08 17:30
+*/
 
-
-
-import {
-  createStore,
-  applyMiddleware,
-  compose
-} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
-import {
-  reduxReactRouter
-} from 'redux-router';
+import {reduxReactRouter} from 'redux-router';
 import createLogger from 'redux-logger';
 import createHistory from 'history/lib/createBrowserHistory';
 
@@ -23,13 +15,17 @@ import routes from '../routes';
 import request from '../middlewares/request';
 import rootReducer from '../reducers';
 
+const middlewares = [thunk, request];
+if (process.env.NODE_ENV !== `production`) {
+  middlewares.push(createLogger());
+}
+
 const finalCreateStore = compose(
-  applyMiddleware(thunk, request),
+  applyMiddleware(...middlewares),
   reduxReactRouter({
     routes,
     createHistory
-  }),
-  applyMiddleware(createLogger())
+  })
 )(createStore);
 
 export default function configureStore(initialState) {

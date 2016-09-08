@@ -1,11 +1,9 @@
 /**
-* @Author: SplendourHui
-* @Date:   2016-05-05 20:06
-* @Last modified by:   SplendourHui
-* @Last modified time: 2016-05-05 20:21
+* @Author: SamChan
+* @Date:   2016-05-05T11:32:09+08:00
+* @Last modified by:   SamChan
+* @Last modified time: 2016-08-30T15:49:36+08:00
 */
-
-
 
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
@@ -14,6 +12,8 @@ import {bindActionCreators} from 'redux';
 import * as commonActions from '../../actions/common';
 import * as messageActions from '../../actions/common_message';
 import * as dialogActions from '../../actions/common_dialog';
+
+import tools from '../../utils/tools';
 
 import './style.less';
 
@@ -43,16 +43,16 @@ App.propTypes = {
   dialogActions: PropTypes.object.isRequired
 };
 
-function mapStateToProps(state) {
-  return {query: state.router.location.query, loading: state.loading, message: state.message, dialog: state.dialog};
-}
+const states = [
+  'loading',
+  'message',
+  'dialog'
+];
 
-function mapDispatchToProps(dispatch) {
-  return {
-    commonActions: bindActionCreators(commonActions, dispatch),
-    messageActions: bindActionCreators(messageActions, dispatch),
-    dialogActions: bindActionCreators(dialogActions, dispatch)
-  };
-}
+const actions = {
+  commonActions,
+  messageActions,
+  dialogActions
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default tools.connect(states, actions, App);
