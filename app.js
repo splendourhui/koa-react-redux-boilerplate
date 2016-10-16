@@ -128,9 +128,12 @@ if (!module.parent) {
   const port = process.argv[2] || require('config')
     .get('defaultPort');
   app.listen(port);
-  koaLogger.warn(`$ Server is listening on port:${port}`);
+  koaLogger.info(`$ Server is listening on port:${port}`);
 }
 
+/**
+ * uncaught exit
+ */
 process.on('exit', (code) => {
   koaLogger.warn(`$ About to exit with code:${code}`);
 });

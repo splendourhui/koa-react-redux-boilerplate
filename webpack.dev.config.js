@@ -1,8 +1,8 @@
 /**
 * @Author: SplendourHui
 * @Date:   2016-06-12 09:36
-* @Last modified by:   SamChan
-* @Last modified time: 2016-08-26T10:37:33+08:00
+* @Last modified by:   SplendourHui
+* @Last modified time: 2016-09-29 10:01
 */
 
 const path = require('path');
@@ -20,8 +20,7 @@ const commonConfig = {
   ],
   resolve: {
     alias: {
-      'history': 'react-router/node_modules/history',
-      'moment': 'moment/min/moment.min.js'
+      'history': 'react-router/node_modules/history'
     },
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
   },

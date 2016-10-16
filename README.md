@@ -20,14 +20,14 @@
 
 #### 开发环境
 ```
-npm start
 npm run dev
+npm start
 ```
-需要开启两个 `cmd` 窗口，支持组件热更新
+需要开启两个 `cmd` 窗口，支持组件热更新，编译完成后，打开 http://localhost:9527/page/example
 
 #### 生产环境
 ```
-npm run dist
+npm run build
 npm start
 ```
 

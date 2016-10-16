@@ -26,11 +26,9 @@
   },
   "scripts": {
     "dev": "node --harmony `which webpack-dev-server` --port 9528 --config webpack.dev.config.js --quiet",
-    "build": "node --harmony `which webpack`",
-    "dist": "node --harmony `which webpack` -p",
-    "start": "supervisor --harmony --ignore public app.js",
-    "test": "mocha --harmony",
-    "test-cov": "node --harmony node_modules/istanbul-harmony/lib/cli.js cover ./node_modules/mocha/bin/_mocha"
+    "build": "NODE_ENV=production node --harmony `which webpack` --config webpack.config.js",
+    "start": "supervisor --harmony --ignore public,node_modules app.js",
+    "test": "mocha --harmony"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
