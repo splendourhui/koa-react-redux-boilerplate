@@ -1,8 +1,8 @@
 /**
-* @Author: SamChan
-* @Date:   2016-05-05T16:17:29+08:00
-* @Last modified by:   SamChan
-* @Last modified time: 2016-05-05T16:35:36+08:00
+* @Author: SplendourHui
+* @Date:   2016-10-16T08:16:22+08:00
+* @Last modified by:   SplendourHui
+* @Last modified time: 2016-12-09T14:12:10+08:00
 */
 
 import React, {Component, PropTypes} from 'react';

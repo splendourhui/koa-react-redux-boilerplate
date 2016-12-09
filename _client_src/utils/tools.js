@@ -2,7 +2,7 @@
 * @Author: SplendourHui
 * @Date:   2016-05-09 15:32
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-09-08 17:35
+* @Last modified time: 2016-12-09T14:11:19+08:00
 */
 
 import React from 'react';
@@ -29,6 +29,9 @@ const mapDispatchToProps = actions =>
     return result;
   };
 
+
+
+
 export default {
 
   isIE8: () => window.navigator.userAgent.indexOf('MSIE 8.0') >= 0,
@@ -45,10 +48,34 @@ export default {
     }
   },
 
-  mapStateToProps,
 
-  mapDispatchToProps,
+  // bind methods to contex so you will not write too much `.bind(this)`
+  bindMethodToThis: (context, methods) => methods.forEach(m =>
+    context[m] = context[m].bind(context)),
 
   connect: (states, actions, container) =>
-    connect(mapStateToProps(states), mapDispatchToProps(actions))(container)
+    connect(mapStateToProps(states), mapDispatchToProps(actions))(container),
+
+  wuliConnect: (selector, actions, container) =>
+    connect(selector, mapDispatchToProps(actions))(container),
+
+  showSucToast: (ctx, sucMsg) => {
+    ctx.props.messageActions.hideToast();
+    ctx.props.messageActions.showToast({
+      msgType: 'success',
+      msg: sucMsg || '操作成功',
+      key: new Date().getTime(),
+      hold: 5
+    });
+  },
+
+  showErrToast: (ctx, errMsg) => {
+    ctx.props.messageActions.hideToast();
+    ctx.props.messageActions.showToast({
+      msgType: 'error',
+      msg: errMsg || '操作失败',
+      key: new Date().getTime(),
+      hold: 5
+    });
+  }
 };

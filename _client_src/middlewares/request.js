@@ -2,21 +2,18 @@
 * @Author: SplendourHui
 * @Date:   2016-05-09 15:32
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-09-08 17:33
+* @Last modified time: 2016-12-09T14:06:36+08:00
 */
 
 import omit from 'lodash/object/omit';
 import isFunction from 'lodash/lang/isFunction';
-import {
-  normalize
-} from 'normalizr';
+import {normalize} from 'normalizr';
 
 import schemas from '../store/schemas';
 
 export const CALL_API = Symbol('Call API');
 
 function callApi(endpoint, schema, data, method, suc, err) {
-  // console.log(omit(data, isFunction));
   $.ajax({
     type: method,
     url: `/${endpoint}`,

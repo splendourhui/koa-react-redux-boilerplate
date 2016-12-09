@@ -15,6 +15,7 @@
     "lodash": "3.10.1",
     "moment": "2.10.6",
     "normalizr": "2.0.1",
+    "ramda": "^0.22.1",
     "react": "15.2.0",
     "react-dom": "15.2.0",
     "react-redux": "4.4.5",
@@ -22,6 +23,7 @@
     "redux": "3.5.2",
     "redux-router": "2.1.2",
     "redux-thunk": "2.0.1",
+    "reselect": "^2.5.4",
     "superagent": "1.4.0"
   },
   "scripts": {

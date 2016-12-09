@@ -1,8 +1,8 @@
 /**
-* @Author: SamChan
-* @Date:   2016-08-30T14:43:20+08:00
-* @Last modified by:   SamChan
-* @Last modified time: 2016-08-30T15:53:49+08:00
+* @Author: SplendourHui
+* @Date:   2016-12-09T12:12:39+08:00
+* @Last modified by:   SplendourHui
+* @Last modified time: 2016-12-09T12:13:40+08:00
 */
 
 export default {

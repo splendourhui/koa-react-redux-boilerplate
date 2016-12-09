@@ -1,8 +1,8 @@
 /**
 * @Author: SplendourHui
-* @Date:   2016-05-09 15:32
+* @Date:   2016-10-16T08:16:22+08:00
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-09-08 17:33
+* @Last modified time: 2016-12-09T14:12:46+08:00
 */
 
 import {Schema} from 'normalizr';

@@ -2,7 +2,7 @@
 * @Author: SplendourHui
 * @Date:   2016-09-08 10:00
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-09-08 17:30
+* @Last modified time: 2016-12-09T13:44:31+08:00
 */
 
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -13,7 +13,7 @@ import createHistory from 'history/lib/createBrowserHistory';
 
 import routes from '../routes';
 import request from '../middlewares/request';
-import rootReducer from '../reducers';
+import rootReducer from '../rootReducer';
 
 const middlewares = [thunk, request];
 if (process.env.NODE_ENV !== `production`) {
