@@ -2,7 +2,7 @@
 * @Author: SplendourHui
 * @Date:   2016-05-09 15:32
 * @Last modified by:   SplendourHui
-* @Last modified time: 2016-09-08 17:31
+* @Last modified time: 2017-01-16 15:31
 */
 
 'use strict';
@@ -11,6 +11,7 @@ const http = require('http');
 const path = require('path');
 const koa = require('koa');
 const middlewares = require('koa-middlewares');
+const router = middlewares.router();
 const logRecord = require('koa-logs-full');
 const easyLogger = require('./middlewares/easy_logger');
 const koaBody = require('koa-better-body');
@@ -81,6 +82,8 @@ app.use(function*(next) {
   } catch (e) {
     const status = e.status || 500;
     const message = e.message || 'Server error';
+    const name = e.name;
+    const code = e.code;
     this.koaLogger.error(status);
     this.koaLogger.error(message);
 
@@ -89,7 +92,9 @@ app.use(function*(next) {
       this.status = status;
       this.body = {
         status,
-        message
+        message,
+        name,
+        code
       };
       return;
     }
@@ -117,7 +122,6 @@ app.use(function*(next) {
  * routes
  */
 app.use(koaValidate());
-const router = middlewares.router();
 require('./routes')(router);
 app.use(router.routes());
 

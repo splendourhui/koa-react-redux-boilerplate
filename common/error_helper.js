@@ -8,10 +8,12 @@
 'use strict';
 
 class JsonError extends Error {
-  constructor(msg, status) {
+  constructor(msg, status, name, code) {
     super(msg);
     this.message = msg || 'server error';
     this.status = status || 500;
+    this.name = name;
+    this.code = code;
   }
 }
 exports.JsonError = JsonError;

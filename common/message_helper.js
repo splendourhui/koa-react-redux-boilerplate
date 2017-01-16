@@ -5,12 +5,18 @@
 * @Last modified time: 2016-09-08 17:32
 */
 
+exports.getMsg = (errCode, msg) => ({
+  errCode,
+  msg
+});
+
 exports.success = (ctx, data) =>
   Object.assign(ctx, {
     status: 200,
     body: {
       status: 200,
-      msg: 'success',
+      errCode: 0,
+      errMsg: '',
       data
     }
   });
@@ -55,12 +61,8 @@ exports.serverError = (ctx, status, msg) =>
     }
   });
 
-exports.response = (ctx, status, msg, data) =>
+exports.response = (ctx, data) =>
   Object.assign(ctx, {
-    status,
-    body: {
-      status,
-      msg,
-      data
-    }
+    status: data.status || 200,
+    body: data
   });
